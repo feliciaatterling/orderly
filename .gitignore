@@ -1,0 +1,19 @@
+# Backend
+/backend/target/
+*.class
+/backend/.env
+/backend/.idea/
+/backend/.vscode/
+
+# Frontend
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env
+/frontend/.idea/
+/frontend/.vscode/
+
+# General
+.DS_Store
+Thumbs.db
+*.swp
+*~
