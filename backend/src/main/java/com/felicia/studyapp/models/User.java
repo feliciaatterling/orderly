@@ -1,11 +1,9 @@
 package com.felicia.studyapp.models;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +13,8 @@ public class User {
     private String username;
     private String email;
     private String passwordHash;
-    
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Task> tasks;
+
+    public User() {}
 
     // Constructor
     public User(String name, String username, String email, String passwordHash) {
@@ -25,7 +22,6 @@ public class User {
         this.username = username;
         this.email = email;
         this.passwordHash = passwordHash;
-        tasks = new ArrayList<>();
     }
 
     // Getters and setters
@@ -45,7 +41,7 @@ public class User {
         this.name = name;
     }
 
-    public String getUserame(){
+    public String getUsername(){
         return username;
     }
 
@@ -67,17 +63,5 @@ public class User {
 
     public void setPassword(String password){
         this.passwordHash = password;
-    }
-
-    public List<Task> getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
-    }
-
-    public void addTasks(Task task){
-        this.tasks.add(task);
     }
 }
