@@ -61,7 +61,7 @@ public class User {
         return passwordHash;
     }
 
-    public void setPassword(String password){
-        this.passwordHash = password;
+    public void setPassword(String passwordHash){
+        this.passwordHash = passwordHash;
     }
 }
